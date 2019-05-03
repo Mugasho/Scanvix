@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Scanvix</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="finish">Submit</string>
+    <string name="review">Review</string>
+
+    <string name="submit_confirm_message">Are you happy with your choices?</string>
+    <string name="submit_confirm_button">OK</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="herp_derpsum">Herp derpsum sherpus derpler berps tee herp ter sherper der derpus terp? Merp ner, dee der perp.
+        Sherpus ter berp derpler derperker pee herpler. Le ner derpus terpus, der ter herpy? Ner terp serp herpem berps herpy der ter.</string>
+    <string name="your_age">Your age</string>
+    <string name="label_your_age">Your age</string>
+</resources>
