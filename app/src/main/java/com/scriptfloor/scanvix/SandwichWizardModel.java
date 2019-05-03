@@ -76,7 +76,7 @@ public class SandwichWizardModel extends AbstractWizardModel {
                                         .setChoices("None,hydrocortisone", "betamethasone", "budesonide", "dexamethasone", "prednisolone", "methylprednisolone"),
                                 new SingleFixedChoicePage(this, "For how long have you taken these drugs?")
                                         .setChoices("More than 3 months ", "Less than 3 months"),
-                                new SingleFixedChoicePage(this, "have you been taking chemotherapy drugs like doxorubicin?")
+                                new SingleFixedChoicePage(this, "have you been taking chemotherapy drugs like dolorubicin?")
                                         .setChoices("only 1", "More than 1"),
                                 new SingleFixedChoicePage(this, "How many sexual partners  have you ever had?")
                                         .setChoices("only 1", "More than 1"),
