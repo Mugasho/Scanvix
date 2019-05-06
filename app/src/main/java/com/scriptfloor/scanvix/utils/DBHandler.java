@@ -92,7 +92,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public void addAnswer(int highest, int higher,int high,int lower,int lowest) {
 
-        String created_at= new SimpleDateFormat("MMM,dd HH:mm").format(new Date());
+        String created_at= new SimpleDateFormat("dd").format(new Date());
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_ANS_HIGHEST, highest); // highest

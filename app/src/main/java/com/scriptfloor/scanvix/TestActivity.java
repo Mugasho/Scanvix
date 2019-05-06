@@ -339,10 +339,10 @@ public class TestActivity extends AppCompatActivity implements PageFragmentCallb
                         }else if (question2.contains("How many children have you delivered?")&&
                                 answer.contains("More than 3")){
                             higher++;
-                        }else if (question2.contains("Have you ever been infected with any of the following?")&& !answer.isEmpty()){
+                        }else if (question2.contains("Have you ever been infected with any of the following?")&& answer!=null){
                             higher++;
                         }else if (question2.contains("Have you been taking any of the following dugs ? glucocorticoid/ steroids")
-                                && !answer.isEmpty()){
+                                && answer!=null){
                             higher++;
                         }else if (question2.contains("For how long have you taken these drugs?")&&
                                 answer.contains("More than 3 months")){
@@ -359,11 +359,11 @@ public class TestActivity extends AppCompatActivity implements PageFragmentCallb
                                 answer.contains("Less than 25Yrs")){
                             high++;
                         }else if (question2.contains("Enter your height")&&
-                                !answer.isEmpty()){
+                                answer!=null){
                             height=Double.parseDouble(answer);
                             height++;
                         }else if (question2.contains("Enter your weight")&&
-                                !answer.isEmpty()){
+                                answer!=null){
                             weight=Double.parseDouble(answer);
                             bmi=weight/(height*height);
                             high++;

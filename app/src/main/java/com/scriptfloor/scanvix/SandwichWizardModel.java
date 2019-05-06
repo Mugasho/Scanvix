@@ -25,22 +25,22 @@ public class SandwichWizardModel extends AbstractWizardModel {
                 new BranchPage(this, "Select your age range")
                         .addBranch("Less than 13")
                         .addBranch("13 and above",
-                                new BranchPage(this, "Have you ever tested for hiv?")
+                                new BranchPage(this, "Are you aware of HPV vaccination programme?")
                                         .addBranch("Yes",
                                                 new BranchPage(this, "Are you vaccinated?")
                                                         .addBranch("Yes",
                                                                 new SingleFixedChoicePage(this, "How many times?")
                                                                         .setChoices("Once", "Twice", "Thrice")
                                                                         .setRequired(true))
-                                                        .addBranch("No"),
-                                                new BranchPage(this, "Have you ever tested for HIV?")
-                                                        .addBranch("Yes",
-                                                                new SingleFixedChoicePage(this, "When was the last time?")
-                                                                        .setChoices("Less than 3 months ago", "More than 3 months ago"),
-                                                                new SingleFixedChoicePage(this, "What was the result?")
-                                                                        .setChoices("Negative", "Positive")
-                                                                        .setRequired(true))
-                                                        .addBranch("No")
+                                                        .addBranch("No"))
+                                        .addBranch("No")
+                                        .setRequired(true),
+                                new BranchPage(this, "Have you ever tested for HIV?")
+                                        .addBranch("Yes",
+                                                new SingleFixedChoicePage(this, "When was the last time?")
+                                                        .setChoices("Less than 3 months ago", "More than 3 months ago"),
+                                                new SingleFixedChoicePage(this, "What was the result?")
+                                                        .setChoices("Negative", "Positive")
                                                         .setRequired(true))
                                         .addBranch("No")
                                         .setRequired(true),
@@ -54,35 +54,39 @@ public class SandwichWizardModel extends AbstractWizardModel {
                                                 new SingleFixedChoicePage(this, "How often?")
                                                         .setChoices("Always", "Sometimes")
                                                         .setRequired(true))
-                                        .addBranch("No")
-                                        .setRequired(true),
+                                        .addBranch("No"),
                                 new BranchPage(this, "Do you use oral contraceptive pills as a family planning method?")
-                                        .addBranch("Yes",
+                                        .addBranch("Yes",new SingleFixedChoicePage(this, "For how long?")
+                                                .setChoices("For long more than 5 yrs", "for only a short time less than 5yrs",
+                                                        "I  stopped less than 10yrs ago", " I  stopped more than 10yrs ago"))
+                                        .addBranch("No"),
+                                new BranchPage(this, "Do you use intra-uterine contraceptive device(coil) as a family planning method?")
+                                        .addBranch("Yes i use the coil",
                                                 new SingleFixedChoicePage(this, "For how long?")
-                                                        .setChoices("For long more than 5 yrs", "for only a short time less than 5yrs",
-                                                                "I  stopped less than 10yrs ago", " I  stopped more than 10yrs ago")
-                                                        .setRequired(true))
-                                        .addBranch("No")
-                                        .setRequired(true),
-                                new BranchPage(this, "Do you use intra-uterine contraceptive device/coil as a family planning method?")
-                                        .addBranch("Yes",
-                                                new SingleFixedChoicePage(this, "For how long?")
-                                                        .setChoices("Less than a year ", "More than a year").setRequired(true))
-                                        .addBranch("No")
-                                        .setRequired(true),
+                                                        .setChoices("Less than a year ", "More than a year"))
+                                        .addBranch("No"),
                                 new SingleFixedChoicePage(this, "Do you use natural methods e.g safe days and danger days, withdrawal method as a family planning method?")
                                         .setChoices("Yes", "No"),
                                 new MultipleFixedChoicePage(this, "Have you been taking any of the following dugs ? glucocorticoid/ steroids")
                                         .setChoices("None,hydrocortisone", "betamethasone", "budesonide", "dexamethasone", "prednisolone", "methylprednisolone"),
                                 new SingleFixedChoicePage(this, "For how long have you taken these drugs?")
                                         .setChoices("More than 3 months ", "Less than 3 months"),
-                                new SingleFixedChoicePage(this, "have you been taking chemotherapy drugs like dolorubicin?")
+                                new SingleFixedChoicePage(this, "have you been taking chemotherapy drugs like doxorubicin?")
                                         .setChoices("only 1", "More than 1"),
                                 new SingleFixedChoicePage(this, "How many sexual partners  have you ever had?")
                                         .setChoices("only 1", "More than 1"),
                                 new SingleFixedChoicePage(this, "Does anyone of your family members (sister or mother) have cervical cancer?")
                                         .setChoices("Yes", "No"),
-                                new BranchPage(this, "How many children have you delivered?"),
+                                new BranchPage(this, "How many children have you delivered?")
+                                        .addBranch("None")
+                                        .addBranch("Less than 3",
+                                                new SingleFixedChoicePage(this, "At what age were you at your first delivery?")
+                                                        .setChoices("Less than 25Yrs ", "Above 25Yrs")
+                                                        .setRequired(true))
+                                        .addBranch("More than 3",
+                                                new SingleFixedChoicePage(this, "At what age were you at your first delivery?")
+                                                        .setChoices("Less than 25Yrs ", "Above 25Yrs")
+                                                        .setRequired(true)),
                                 new SingleFixedChoicePage(this, "How often  do you eat fruits and vegetables?")
                                         .setChoices("Daily", "More than 3", "Less than 3", "Never")
                                         .setRequired(true),
@@ -93,14 +97,15 @@ public class SandwichWizardModel extends AbstractWizardModel {
                                                 "post-menopausal bleeding", "watery, pink or foul-smelling discharge from the vagina",
                                                 "pelvic pain during intercourse", "pelvic pain any other time of the day"),
                                 new BranchPage(this, "Have you ever screened for cervical cancer?")
-                                        .addBranch("Yes")
-                                        .addBranch("No")
-                                        .setRequired(true),
+                                        .addBranch("Yes",
+                                                new SingleFixedChoicePage(this, "What was the result?")
+                                                        .setChoices("Normal", "Abnormal"))
+                                        .addBranch("No").setRequired(true),
                                 new SingleFixedChoicePage(this, "Have you got any organ transplant?")
                                         .setChoices("Yes", "No"),
                                 new SingleFixedChoicePage(this, "How much do you use a day on average?")
-                                        .setChoices("less than  2 dollars(@ 3700ugx", "More than 2 dollars(@3700ugx"))
-                        .setRequired(true)
+                                        .setChoices("less than  2 dollars(@ 3700ugx", "More than 2 dollars(@3700ugx")
+                        )
         );
 
     }
